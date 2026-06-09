@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Fira+Code:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Backgrounds */
+
+  --bg-card: #ffffff;
+
+  --bg: #f6f5f7;
+  --bg-elevated: #ede8f5;
+
+  /* Accent*/
+  --accent: #9b72cf;
+  --accent-hover: #7c4dab;
+  --accent-light: #c4a4e8;
+  --accent-glow: rgba(155, 114, 207, 0.25);
+
+  /* Second accent */
+  --accent-2: #e879a0;
+  --accent-2-hover: #d1487e;
+  --accent-2-glow: rgba(232, 121, 160, 0.2);
+
+  /* Text */
+  --text-primary: #4a1d6e;
+  --text-secondary: #6b5b8a;
+  --text-muted: #a594c0;
+
+  /* Borders */
+  --border: rgba(155, 114, 207, 0.15);
+  --border-hover: rgba(155, 114, 207, 0.4);
+
+  /* Status */
+  --green: #059669;
+
+  /* Fonts */
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  --nav-height: 70px;
+  --ease: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* CURSOR GLOW  */
+.cursor-glow {
+  position: fixed;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(155, 114, 207, 0.18) 0%,
+    rgba(232, 121, 160, 0.1) 40%,
+    transparent 70%
+  );
+  transition:
+    left 0.08s ease,
+    top 0.08s ease;
+}
+
+/* SCROLLBAR  */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  border-radius: 3px;
+}
+
+/* SELECTION  */
+::selection {
+  background: rgba(155, 114, 207, 0.15);
+  color: var(--accent);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+section,
+nav,
+footer {
+  position: relative;
+  z-index: 1;
+}
