@@ -40,7 +40,7 @@ function Footer() {
               <FaGithub size={18} />
             </a>
             <a
-              href="www.linkedin.com/in/tebatso-moholoa-50b869235"
+              href="https://www.linkedin.com/in/tebatso-moholoa-50b869235"
               target="_blank"
               rel="noopener noreferrer"
             >

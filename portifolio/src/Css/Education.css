@@ -1,0 +1,224 @@
+#education {
+  padding: 100px 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  text-align: center;
+}
+
+.section-sub {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ── TABS ── */
+.edu-tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.edu-radio {
+  display: none;
+}
+
+.edu-tab-labels {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.edu-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 22px;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  min-width: 130px;
+}
+
+.edu-tab:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.tab-place {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.tab-year {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* ── CARD ── */
+.edu-card-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.edu-card {
+  display: none;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 18px;
+  padding: 36px 40px;
+  max-width: 700px;
+  width: 100%;
+  text-align: left;
+  flex-direction: column;
+  gap: 22px;
+}
+
+#edu-1:checked ~ .edu-card-wrap #card-1,
+#edu-2:checked ~ .edu-card-wrap #card-2,
+#edu-3:checked ~ .edu-card-wrap #card-3,
+#edu-4:checked ~ .edu-card-wrap #card-4 {
+  display: flex;
+}
+
+#edu-1:checked ~ .edu-tab-labels label[for="edu-1"],
+#edu-2:checked ~ .edu-tab-labels label[for="edu-2"],
+#edu-3:checked ~ .edu-tab-labels label[for="edu-3"],
+#edu-4:checked ~ .edu-tab-labels label[for="edu-4"] {
+  border-color: var(--accent);
+  background: rgba(155, 114, 207, 0.1);
+}
+
+#edu-1:checked ~ .edu-tab-labels label[for="edu-1"] .tab-place,
+#edu-2:checked ~ .edu-tab-labels label[for="edu-2"] .tab-place,
+#edu-3:checked ~ .edu-tab-labels label[for="edu-3"] .tab-place,
+#edu-4:checked ~ .edu-tab-labels label[for="edu-4"] .tab-place {
+  color: var(--accent);
+}
+
+.edu-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.edu-role {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.edu-at {
+  color: var(--accent);
+}
+
+.edu-period {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.edu-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.edu-tag.education {
+  background: rgba(155, 114, 207, 0.12);
+  color: var(--accent);
+}
+
+.edu-tag.experience {
+  background: rgba(232, 121, 160, 0.12);
+  color: var(--accent-2);
+}
+
+.edu-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edu-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.edu-arrow {
+  color: var(--accent);
+  font-size: 10px;
+  margin-top: 7px;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1080px) {
+  #education {
+    padding: 100px 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  #education {
+    padding: 80px 25px;
+  }
+  #education .sec-heading h2 {
+    font-size: 22px;
+    white-space: normal;
+  }
+
+  #education .sec-heading {
+    flex-wrap: wrap;
+  }
+  .edu-card {
+    padding: 24px 20px;
+  }
+  .edu-card-top {
+    flex-direction: column;
+  }
+  .edu-role {
+    font-size: 17px;
+  }
+}

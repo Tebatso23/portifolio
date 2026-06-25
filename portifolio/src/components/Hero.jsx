@@ -1,8 +1,26 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../Css/Hero.css";
 
 function Hero() {
   const sectionRef = useRef(null);
+  const [displayed, setDisplayed] = useState("");
+  const fullText = "I build. I learn. I grow.";
+
+  useEffect(() => {
+    let i = 0;
+    const timer = setTimeout(() => {
+      const interval = setInterval(() => {
+        if (i < fullText.length) {
+          setDisplayed(fullText.slice(0, i + 1));
+          i++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 80);
+      return () => clearInterval(interval);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,10 +60,13 @@ function Hero() {
         </span>
 
         <h1 className="hero-name fade-item">
-          Tebatso<span className="hero-dot">.</span>
+          Tebatso Moholoa<span className="hero-dot">.</span>
         </h1>
 
-        <h2 className="hero-tagline fade-item">I build. I learn. I grow.</h2>
+        <h2 className="hero-tagline fade-item">
+          {displayed}
+          <span className="cursor-blink">|</span>
+        </h2>
 
         <p className="hero-bio fade-item">
           A final-year IT student who never stopped at good enough. I'm always
@@ -66,7 +87,6 @@ function Hero() {
       <div className="hero-right fade-item">
         <div className="hero-illustration">
           <svg className="illustration-svg" viewBox="0 0 500 500">
-            {/* background glow circles */}
             <circle
               cx="250"
               cy="250"
@@ -91,8 +111,6 @@ function Hero() {
               stroke="rgba(232,121,160,0.15)"
               strokeWidth="1"
             />
-
-            {/* rotating dashed rings */}
             <circle
               cx="250"
               cy="250"
@@ -113,8 +131,6 @@ function Hero() {
               strokeDasharray="5 8"
               className="ring-rotate-reverse"
             />
-
-            {/* outer hexagon */}
             <polygon
               points="250,150 335,198 335,294 250,342 165,294 165,198"
               fill="rgba(155,114,207,0.08)"
@@ -122,16 +138,12 @@ function Hero() {
               strokeWidth="2"
               className="hex-pulse"
             />
-
-            {/* inner hexagon */}
             <polygon
               points="250,192 308,224 308,288 250,320 192,288 192,224"
               fill="rgba(232,121,160,0.06)"
               stroke="rgba(232,121,160,0.35)"
               strokeWidth="1.5"
             />
-
-            {/* connecting lines from center to dots */}
             <line
               x1="250"
               y1="250"
@@ -186,8 +198,6 @@ function Hero() {
               strokeWidth="1"
               strokeDasharray="4 4"
             />
-
-            {/* outer dots */}
             <circle
               cx="250"
               cy="70"
@@ -242,8 +252,6 @@ function Hero() {
               strokeWidth="2"
               className="dot-pulse-delay"
             />
-
-            {/* center hexagon with T */}
             <polygon
               points="250,214 278,230 278,262 250,278 222,262 222,230"
               fill="rgba(155,114,207,0.2)"
@@ -261,8 +269,6 @@ function Hero() {
             >
               T
             </text>
-
-            {/* floating triangles */}
             <polygon
               points="390,75 408,105 372,105"
               fill="rgba(155,114,207,0.3)"
@@ -291,8 +297,6 @@ function Hero() {
               strokeWidth="1.5"
               className="tri-float-delay"
             />
-
-            {/* skill badge pills */}
             <rect
               x="305"
               y="92"
@@ -314,7 +318,6 @@ function Hero() {
             >
               React.js
             </text>
-
             <rect
               x="96"
               y="255"
@@ -336,7 +339,6 @@ function Hero() {
             >
               C# .NET
             </text>
-
             <rect
               x="318"
               y="362"
@@ -358,7 +360,6 @@ function Hero() {
             >
               AWS
             </text>
-
             <rect
               x="102"
               y="130"
@@ -380,7 +381,6 @@ function Hero() {
             >
               Figma
             </text>
-
             <rect
               x="180"
               y="42"
@@ -402,7 +402,6 @@ function Hero() {
             >
               SQL
             </text>
-
             <rect
               x="320"
               y="208"

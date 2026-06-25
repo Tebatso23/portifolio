@@ -28,10 +28,34 @@ function Particles() {
       });
     }
 
+    const MAX_DIST = 120;
     let id;
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // constellation lines
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const a = particles[i];
+          const b = particles[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < MAX_DIST) {
+            const alpha = (1 - dist / MAX_DIST) * 0.18;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(155,114,207,${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // particles
       particles.forEach(function (p) {
         p.y -= p.speed;
         p.x += p.drift;
@@ -41,11 +65,13 @@ function Particles() {
         }
         if (p.x < -10) p.x = canvas.width + 10;
         if (p.x > canvas.width + 10) p.x = -10;
+
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${p.color}, ${p.opacity})`;
         ctx.fill();
       });
+
       id = requestAnimationFrame(draw);
     }
 

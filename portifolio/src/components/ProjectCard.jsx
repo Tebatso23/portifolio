@@ -1,87 +1,17 @@
 import "../Css/Projects.css";
 import { useEffect, useRef } from "react";
+import { featured, noteworthy } from "../data/projects";
 import BccourseFinder from "../Images/BcCourse.jpeg";
 import Gadget from "../Images/gadget.jpeg";
 import rockPaper from "../Images/rockpaper.jpeg";
 import portfolio from "../Images/portfolio.jpeg";
 
-const featured = [
-  {
-    id: 1,
-    title: "AI Course Finder",
-    label: "Featured Project",
-    image: BccourseFinder,
-    description:
-      "A team project built as part of my school curriculum. A web app that fetches and recommends AI courses using a C# backend API, deployed live on Microsoft Azure. My first experience with full-stack development and cloud deployment.",
-    tech: ["HTML", "CSS", "JavaScript", "C#", "REST API", "Azure"],
-    github: "https://github.com/Tebatso23/bccoursefinderForMatricStudents.git",
-    live: "https://bccoursefinder.azurewebsites.net/",
-    align: "left",
-  },
-  {
-    id: 2,
-    title: "Gadget Catalog",
-    label: "Featured Project",
-    image: Gadget,
-    description:
-      "A feature-rich single-page application with search, bookmarking, comparison, and spec-printing — all without page reloads. Built to solve a real problem of browsing and comparing tech specs efficiently.",
-    tech: ["HTML", "CSS", "JavaScript", "LocalStorage"],
-    github: "https://github.com/Tebatso23/gadget-catalog.git",
-    live: "https://sprightly-entremet-f6c320.netlify.app/",
-    align: "right",
-  },
-  {
-    id: 3,
-    title: "Rock Paper Scissors",
-    label: "Featured Project",
-    image: rockPaper,
-    description:
-      "An interactive Rock Paper Scissors game with score tracking, animations, and a clean minimal interface. Built to practice DOM manipulation and game logic.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/Tebatso23/Rock-Paper-Scissor-Game.git",
-    live: "https://tebatso23.github.io/Rock-Paper-Scissor-Game/",
-    align: "left",
-  },
-  {
-    id: 4,
-    title: "Portfolio Site",
-    label: "Featured Project",
-    image: portfolio,
-    description:
-      "My personal developer portfolio showcasing my projects, skills, and journey. Designed and built from scratch with React, animations, and a custom design system.",
-    tech: ["React.js", "CSS3", "Figma"],
-    github: "#",
-    live: "#",
-    align: "right",
-  },
-];
-
-const noteworthy = [
-  {
-    id: 1,
-    title: "Database Design Project",
-    description:
-      "Designed an ERD for a hospital management system with Doctor, Patient, Department and Consultation entities. Applied normalisation from 0NF to 3NF on a car rental dataset — identifying anomalies, functional dependencies, and resolving partial and transitive dependencies.",
-    tech: ["SQL", "ERD", "Normalisation", "MS Access"],
-    github: "/database-design.pdf",
-  },
-  {
-    id: 2,
-    title: "Network Development Project",
-    description:
-      "Designed and documented a small network infrastructure for a business scenario covering IP addressing, subnetting, routing, and security.",
-    tech: ["Networking", "Subnetting", "Routing", "Security"],
-    github: "#",
-  },
-  {
-    id: 3,
-    title: "Solar Car Project",
-    description:
-      "A team project involving the design and planning of a solar-powered vehicle. Covers energy systems, sustainability, and engineering fundamentals.",
-    tech: ["Engineering", "Solar Energy", "Teamwork"],
-    github: "#",
-  },
-];
+const images = {
+  1: BccourseFinder,
+  2: Gadget,
+  3: rockPaper,
+  4: portfolio,
+};
 
 function Projects() {
   const sectionRef = useRef(null);
@@ -113,7 +43,7 @@ function Projects() {
   return (
     <section id="projects" ref={sectionRef}>
       <div className="sec-heading fade-item">
-        <span className="sec-num">02.</span>
+        <span className="sec-num">03.</span>
         <h2>Projects</h2>
       </div>
       <p className="section-sub fade-item">
@@ -127,7 +57,7 @@ function Projects() {
             className={`featured-row fade-item ${p.align === "right" ? "reverse" : ""}`}
           >
             <div className="featured-image">
-              <img src={p.image} alt={p.title} />
+              <img src={images[p.id]} alt={p.title} />
             </div>
 
             <div className="featured-content">

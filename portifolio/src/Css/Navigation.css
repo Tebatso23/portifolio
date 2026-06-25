@@ -269,3 +269,13 @@ nav ul li a:hover {
     height: calc(100vh - var(--nav-height));
   }
 }
+
+nav ul li a.nav-active {
+  color: var(--accent) !important;
+  background: rgba(155, 114, 207, 0.12) !important;
+}
+
+.mobile-menu ul li a.nav-active {
+  color: var(--accent) !important;
+  background: rgba(155, 114, 207, 0.08) !important;
+}

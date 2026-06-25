@@ -7,10 +7,11 @@ function Navigation() {
   const [scrolled, setScrolled] = useState(false);
 
   const links = [
-    { id: 1, link: "Home", href: "#home" },
-    { id: 2, link: "About", href: "#about" },
-    { id: 3, link: "Projects", href: "#projects" },
-    { id: 4, link: "Contact", href: "#contact" },
+    { id: 1, link: "Home", href: "#home", section: "home" },
+    { id: 2, link: "About", href: "#about", section: "about" },
+    { id: 3, link: "Education", href: "#education", section: "education" },
+    { id: 4, link: "Projects", href: "#projects", section: "projects" },
+    { id: 5, link: "Contact", href: "#contact", section: "contact" },
   ];
 
   useEffect(() => {

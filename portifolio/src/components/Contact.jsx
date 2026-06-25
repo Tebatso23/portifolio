@@ -78,7 +78,7 @@ function Contact() {
     <section id="contact" ref={sectionRef}>
       {/* ── HEADING ── */}
       <div className="sec-heading fade-item">
-        <span className="sec-num">03.</span>
+        <span className="sec-num">04.</span>
         <h2>Get In Touch</h2>
       </div>
 
@@ -156,7 +156,7 @@ function Contact() {
 
           <div className="contact-socials">
             <a
-              href="https://github.com"
+              href="https://github.com/Tebatso23"
               target="_blank"
               rel="noreferrer"
               className="social-pill"
@@ -172,7 +172,7 @@ function Contact() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/tebatso-moholoa-50b869235"
               target="_blank"
               rel="noreferrer"
               className="social-pill"

@@ -7,37 +7,28 @@
 }
 
 :root {
-  /* Backgrounds */
+  --bg: #ffffff;
+  --bg-card: #faf8ff;
+  --bg-elevated: #f3effc;
 
-  --bg-card: #ffffff;
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --accent-light: #a78bfa;
+  --accent-glow: rgba(124, 58, 237, 0.25);
 
-  --bg: #f6f5f7;
-  --bg-elevated: #ede8f5;
+  --accent-2: #db2777;
+  --accent-2-hover: #be185d;
+  --accent-2-glow: rgba(219, 39, 119, 0.2);
 
-  /* Accent*/
-  --accent: #9b72cf;
-  --accent-hover: #7c4dab;
-  --accent-light: #c4a4e8;
-  --accent-glow: rgba(155, 114, 207, 0.25);
+  --text-primary: #3b0764;
+  --text-secondary: #5b3f82;
+  --text-muted: #9474b4;
 
-  /* Second accent */
-  --accent-2: #e879a0;
-  --accent-2-hover: #d1487e;
-  --accent-2-glow: rgba(232, 121, 160, 0.2);
+  --border: rgba(124, 58, 237, 0.2);
+  --border-hover: rgba(124, 58, 237, 0.45);
 
-  /* Text */
-  --text-primary: #4a1d6e;
-  --text-secondary: #6b5b8a;
-  --text-muted: #a594c0;
-
-  /* Borders */
-  --border: rgba(155, 114, 207, 0.15);
-  --border-hover: rgba(155, 114, 207, 0.4);
-
-  /* Status */
   --green: #059669;
 
-  /* Fonts */
   --font-sans: "DM Sans", sans-serif;
   --font-mono: "Fira Code", monospace;
 
@@ -50,7 +41,13 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: #ffffff;
+  background-image: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.18) 1.2px,
+    transparent 1.2px
+  );
+  background-size: 26px 26px;
   color: var(--text-secondary);
   font-family: var(--font-sans);
   font-size: 18px;
@@ -59,7 +56,6 @@ body {
   overflow-x: hidden;
 }
 
-/* CURSOR GLOW  */
 .cursor-glow {
   position: fixed;
   width: 320px;
@@ -70,8 +66,8 @@ body {
   transform: translate(-50%, -50%);
   background: radial-gradient(
     circle,
-    rgba(155, 114, 207, 0.18) 0%,
-    rgba(232, 121, 160, 0.1) 40%,
+    rgba(124, 58, 237, 0.25) 0%,
+    rgba(219, 39, 119, 0.15) 40%,
     transparent 70%
   );
   transition:
@@ -79,7 +75,6 @@ body {
     top 0.08s ease;
 }
 
-/* SCROLLBAR  */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -91,9 +86,8 @@ body {
   border-radius: 3px;
 }
 
-/* SELECTION  */
 ::selection {
-  background: rgba(155, 114, 207, 0.15);
+  background: rgba(124, 58, 237, 0.15);
   color: var(--accent);
 }
 
@@ -106,6 +100,7 @@ a {
 a:hover {
   color: var(--accent-hover);
 }
+
 #particle-canvas {
   position: fixed;
   top: 0;
@@ -121,4 +116,14 @@ nav,
 footer {
   position: relative;
   z-index: 1;
+}
+
+#home,
+#about,
+#education,
+#projects,
+#contact {
+  position: relative;
+  z-index: 1;
+  background: transparent;
 }
