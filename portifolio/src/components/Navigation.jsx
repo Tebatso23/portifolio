@@ -56,7 +56,10 @@ function Navigation() {
         {/* desktop actions */}
         <div className="nav-actions">
           <p>
-            <a href="/resume.pdf" download>
+            <a
+              href="./portifolio/public/Tebatso-Makoma Moholoa (3).pdf"
+              download
+            >
               Resume
             </a>
           </p>
