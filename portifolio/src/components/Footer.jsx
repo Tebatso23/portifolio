@@ -53,13 +53,6 @@ function Footer() {
             >
               <FaTwitter size={18} />
             </a>
-            <a
-              href="https://instagram.com/yourname"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram size={18} />
-            </a>
           </div>
           <div className="footer-status">
             <span className="footer-status-dot"></span>
