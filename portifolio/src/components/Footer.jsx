@@ -98,7 +98,9 @@ function Footer() {
               </a>
             </li>
             <li>
-              <a href="#">Synergy AI Learnership</a>
+              <a href="mailto:Makomatebatso375@gmail.com">
+                Synergy AI Learnership
+              </a>
             </li>
             <li>
               <a href="/resume.pdf" download>
